@@ -5,13 +5,11 @@ RUN npm i --global npm@10.9.0
 
 WORKDIR /app
 
-COPY package.json /app
-RUN chown -R node:node /app
+RUN chown node:node /app
 
 USER node
 
-RUN npm -ddd install --verbose
+RUN npm -ddd install --no-audit rollup
 
-RUN cat /home/node/.npm/_logs/*.log
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node"]
