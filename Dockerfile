@@ -9,7 +9,7 @@ RUN chown node:node /app
 
 USER node
 
-RUN npm -ddd install --no-audit rollup
+RUN npm -ddd install --no-audit --timing always rollup
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node"]
