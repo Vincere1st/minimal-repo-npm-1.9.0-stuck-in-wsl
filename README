@@ -5,7 +5,7 @@
 - Docker installed in WSL
 
 1. Clone this Project
-2. Run `docker build .`
+2. Run `docker build --no-cache --progress=plain .`
 3. You should see the logs in terminal at the end of the build
 4. Change version of npm in Dockerfile to `10.8.0`
 5. Retry from step 2
